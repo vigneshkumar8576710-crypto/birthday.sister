@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Shimmer Button Effect */
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.shimmer-button:hover::after {
+  left: 150%;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(230, 230, 250, 0.35);
+}
+
+.ambient-shadow {
+  box-shadow: 0 12px 40px 0 rgba(230, 230, 250, 0.45);
+}
+
+/* Gold Foil Text */
+.gold-foil-text {
+  background: linear-gradient(135deg, #f9d156 0%, #e9c349 45%, #ffe088 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-foil {
+  background: linear-gradient(45deg, #f9d156, #ffe088, #e9c349);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(249, 209, 86, 0.3);
+}
+
+/* Soft Background Gradients */
+.bg-gradient-soft {
+  background: linear-gradient(180deg, #f8c8dc 0%, #e9bacd 50%, #e1e1f5 100%);
+}
+
+.bg-hero-soft {
+  background: linear-gradient(180deg, #f8c8dc 0%, #e1e1f5 100%);
+}
+
+/* Polaroid Styles */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 16px 16px 44px 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06), 0 20px 40px rgba(230, 230, 250, 0.3);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  position: relative;
+}
+
+.polaroid-frame:hover {
+  transform: scale(1.035) rotate(0deg) !important;
+  box-shadow: 0 16px 36px rgba(121, 84, 101, 0.18), 0 24px 48px rgba(230, 230, 250, 0.5);
+  z-index: 20;
+}
+
+/* Candle Animations */
+.candle-flame {
+  width: 14px;
+  height: 26px;
+  background: linear-gradient(to top, #ff7a18, #ffd200, #ffffff);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 18px 6px rgba(255, 219, 88, 0.7), 0 0 30px 10px rgba(255, 120, 50, 0.3);
+  animation: flicker 0.15s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+@keyframes flicker {
+  0% {
+    transform: scale(1) rotate(-2deg);
+    box-shadow: 0 0 14px 4px rgba(255, 219, 88, 0.6);
+  }
+  50% {
+    transform: scale(1.08, 0.95) rotate(1deg);
+  }
+  100% {
+    transform: scale(1.12, 1.05) rotate(2deg);
+    box-shadow: 0 0 22px 9px rgba(255, 219, 88, 0.85);
+  }
+}
+
+.sparkle-overlay {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+

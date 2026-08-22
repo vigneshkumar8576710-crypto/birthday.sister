@@ -1,0 +1,6 @@
+{
+  "name": "Sisters' Magic",
+  "description": "A magical interactive birthday celebration for an amazing sister featuring reasons why she's loved, an interactive 3D cake cutting experience, and a heartfelt letter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
